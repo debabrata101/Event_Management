@@ -1,16 +1,74 @@
-# React + Vite
+# K Explore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+K Explore is a responsive event discovery and registration frontend built with React, Vite and Tailwind CSS. Visitors can discover events, search and filter listings, view event details, and register. Registration records and the selected theme are stored in the browser's LocalStorage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive landing page and navigation
+- Event discovery with title search, category filtering and date sorting
+- Individual event detail pages with countdown timer
+- Validated registration form with LocalStorage persistence
+- Registration confirmation screen
+- Dark/light theme with saved preference
+- Contact form with frontend validation and confirmation
+- Mobile navigation, toast notifications and back-to-top control
+- Hash-based routing for straightforward static hosting
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 + Vite
+- JavaScript (ES6+)
+- Tailwind CSS
+- React Router DOM (`HashRouter`)
+- Lucide React
+- Browser LocalStorage
 
-## Expanding the ESLint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The production output is generated in `dist/`.
+
+## Project structure
+
+```text
+src/
+  components/   Reusable navigation, cards, filters and UI
+  context/      Theme context
+  data/         Sample event data
+  pages/        Home, events, details, registration, about, contact
+  utils/        Validation and LocalStorage helpers
+  App.jsx
+  main.jsx
+  index.css
+```
+
+## Registration storage
+
+Successful registrations are saved under the `kexplore_registrations` LocalStorage key. This is a frontend demonstration only; it does not transmit personal information to a server. Contact form submissions are validated locally and are not sent to an inbox.
+
+## Deployment
+
+- **Vercel:** Import the GitHub repository. Build command: `npm run build`; output directory: `dist`.
+- **Netlify:** Import the repository. The included `netlify.toml` configures the build and SPA fallback.
+- **GitHub Pages:** Build with `npm run build` and publish `dist` using a Pages deployment workflow. Hash-based routing is enabled to avoid server-side route rewrites.
+
+## Screenshots
+
+Add screenshots of the home page, event listing, details and registration screens here.
+
+## Deployment URL
+
+_Add your deployed URL here._
