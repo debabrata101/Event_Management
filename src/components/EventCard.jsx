@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CalendarDays, MapPin, ArrowUpRight } from "lucide-react";
+// eslint-disable-next-line react-refresh/only-export-components
 export function formatDate(value) {
   return new Date(value).toLocaleDateString("en-IN", {
     day: "numeric",
